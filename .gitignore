@@ -1,0 +1,30 @@
+# Ignore node modules
+node_modules/
+
+# Ignore database file
+server/database/*.db
+server/database/*.db-journal
+
+# Ignore environment variables
+.env
+.env.local
+
+# Ignore logs
+logs/
+*.log
+npm-debug.log*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore build files
+dist/
+build/

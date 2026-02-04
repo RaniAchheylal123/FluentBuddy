@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Practice - FluentBuddy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>FluentBuddy</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/progress">My Progress</a>
+                <span id="userDisplay" class="user-display"></span>
+                <button id="logoutBtn" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="practice-container">
+        <div class="practice-header">
+            <h1>📖 Reading Comprehension</h1>
+            <p>Enhance your understanding with reading exercises</p>
+        </div>
+
+        <div class="level-selector">
+            <label>Select Level:</label>
+            <button class="level-btn active" data-level="beginner">Beginner</button>
+            <button class="level-btn" data-level="intermediate">Intermediate</button>
+            <button class="level-btn" data-level="advanced">Advanced</button>
+        </div>
+
+        <div id="exercisesList" class="exercises-list"></div>
+
+        <!-- Exercise Modal -->
+        <div id="exerciseModal" class="modal">
+            <div class="modal-content exercise-modal">
+                <span class="close">&times;</span>
+                <div id="exerciseContent">
+                    <h2 id="exerciseTitle"></h2>
+                    <div class="exercise-level-badge" id="exerciseLevelBadge"></div>
+                    
+                    <div class="reading-passage">
+                        <h3>Passage:</h3>
+                        <div id="exerciseDescription" class="passage-text"></div>
+                    </div>
+
+                    <div class="hints">
+                        <strong>💡 Hints:</strong>
+                        <p id="exerciseHints"></p>
+                    </div>
+
+                    <div class="answer-area">
+                        <label for="readingAnswer"><strong>Your Answer:</strong></label>
+                        <textarea id="readingAnswer" rows="4" placeholder="Type your answer here..."></textarea>
+                    </div>
+
+                    <button id="submitReading" class="btn-primary btn-large">Submit Answer</button>
+
+                    <div id="feedback" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/reading.js"></script>
+</body>
+</html>

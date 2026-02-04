@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress - FluentBuddy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>FluentBuddy</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/progress" class="active">My Progress</a>
+                <span id="userDisplay" class="user-display"></span>
+                <button id="logoutBtn" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-container">
+        <header class="progress-header">
+            <h1>📊 My Progress</h1>
+            <p>Track your English learning journey</p>
+        </header>
+
+        <section class="progress-overview">
+            <div class="progress-card">
+                <h3>Overall Statistics</h3>
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Exercises:</span>
+                        <span class="stat-value" id="totalExercises">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Score:</span>
+                        <span class="stat-value" id="averageScore">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-card">
+                <h3>Performance by Type</h3>
+                <div id="performanceByType" class="performance-grid"></div>
+            </div>
+        </section>
+
+        <section class="detailed-progress">
+            <h2>Recent Activities</h2>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-type="all">All</button>
+                <button class="filter-btn" data-type="speaking">Speaking</button>
+                <button class="filter-btn" data-type="writing">Writing</button>
+                <button class="filter-btn" data-type="reading">Reading</button>
+            </div>
+            <div id="activityList" class="activity-timeline"></div>
+        </section>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/progress.js"></script>
+</body>
+</html>

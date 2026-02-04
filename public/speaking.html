@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Practice - FluentBuddy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>FluentBuddy</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/progress">My Progress</a>
+                <span id="userDisplay" class="user-display"></span>
+                <button id="logoutBtn" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="practice-container">
+        <div class="practice-header">
+            <h1>🎤 Speaking Practice</h1>
+            <p>Practice your pronunciation and speaking fluency</p>
+        </div>
+
+        <div class="level-selector">
+            <label>Select Level:</label>
+            <button class="level-btn active" data-level="beginner">Beginner</button>
+            <button class="level-btn" data-level="intermediate">Intermediate</button>
+            <button class="level-btn" data-level="advanced">Advanced</button>
+        </div>
+
+        <div id="exercisesList" class="exercises-list"></div>
+
+        <!-- Exercise Modal -->
+        <div id="exerciseModal" class="modal">
+            <div class="modal-content exercise-modal">
+                <span class="close">&times;</span>
+                <div id="exerciseContent">
+                    <h2 id="exerciseTitle"></h2>
+                    <div class="exercise-level-badge" id="exerciseLevelBadge"></div>
+                    <div class="exercise-instructions">
+                        <p id="exerciseDescription"></p>
+                    </div>
+                    <div class="hints">
+                        <strong>💡 Hints:</strong>
+                        <p id="exerciseHints"></p>
+                    </div>
+
+                    <div class="speech-controls">
+                        <button id="startRecording" class="btn-primary btn-large">
+                            🎤 Start Recording
+                        </button>
+                        <button id="stopRecording" class="btn-secondary btn-large" style="display: none;">
+                            ⏹️ Stop Recording
+                        </button>
+                        <div id="recordingStatus" class="recording-status"></div>
+                    </div>
+
+                    <div id="transcription" class="transcription"></div>
+
+                    <div id="manualInput" class="manual-input">
+                        <p class="info-text">Or type your response:</p>
+                        <textarea id="spokenText" rows="4" placeholder="Type what you would say..."></textarea>
+                        <button id="submitSpeaking" class="btn-primary">Submit Response</button>
+                    </div>
+
+                    <div id="feedback" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/speaking.js"></script>
+</body>
+</html>

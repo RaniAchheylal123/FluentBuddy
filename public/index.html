@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluentBuddy - Learn English Confidently</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>FluentBuddy</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <button id="loginBtn" class="btn-secondary">Login</button>
+                    <button id="signupBtn" class="btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Master English with Confidence</h1>
+            <p class="hero-subtitle">
+                Personalized AI-powered learning platform designed for students to improve 
+                speaking, writing, and comprehension skills in real-world contexts.
+            </p>
+            <button id="getStartedBtn" class="btn-hero">Get Started Free</button>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose FluentBuddy?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Speaking Practice</h3>
+                    <p>Practice pronunciation and speaking with real-time feedback using AI speech recognition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Writing Exercises</h3>
+                    <p>Improve your writing skills with personalized exercises and instant grammar feedback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Reading Comprehension</h3>
+                    <p>Enhance understanding with level-appropriate passages and comprehension questions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement over time with detailed analytics and performance insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Learning</h3>
+                    <p>Content adapted to your level - beginner, intermediate, or advanced.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Feedback</h3>
+                    <p>Get immediate responses and corrections to accelerate your learning journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Account</h3>
+                    <p>Sign up and tell us your current English level</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Choose Your Practice</h3>
+                    <p>Select from speaking, writing, or reading exercises</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Practice & Improve</h3>
+                    <p>Complete exercises and receive instant feedback</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your improvement and celebrate achievements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to FluentBuddy</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="loginPassword" required>
+                        <span class="password-toggle" onclick="togglePassword('loginPassword')">👁️</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <div class="divider">OR</div>
+                <button type="button" class="btn-google" onclick="loginWithGoogle()">
+                    <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 20px; margin-right: 10px;">
+                    Continue with Google
+                </button>
+                <p class="form-footer">Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Join FluentBuddy</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="signupPassword" required>
+                        <span class="password-toggle" onclick="togglePassword('signupPassword')">👁️</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signupLevel">Current English Level</label>
+                    <select id="signupLevel" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+                <div class="divider">OR</div>
+                <button type="button" class="btn-google" onclick="signupWithGoogle()">
+                    <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 20px; margin-right: 10px;">
+                    Continue with Google
+                </button>
+                <p class="form-footer">Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FluentBuddy. Empowering students to master English.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
