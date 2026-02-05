@@ -1,7 +1,8 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.join(__dirname, 'fluentbuddy.db');
+// Use in-memory database for Vercel (serverless)
+const dbPath = process.env.VERCEL ? ':memory:' : path.join(__dirname, 'fluentbuddy.db');
 const db = new sqlite3.Database(dbPath);
 
 function initializeDatabase() {
@@ -42,14 +43,18 @@ function initializeDatabase() {
       FOREIGN KEY (exercise_id) REFERENCES exercises(id)
     )`);
 
-    // Insert sample exercises
-    insertSampleExercises();
+    // Insert sample exercises (always for in-memory DB)
+    if (process.env.VERCEL) {
+      insertSampleExercises();
+    } else {
+      checkAndInsertExercises();
+    }
   });
 
   console.log('Database initialized successfully');
 }
 
-function insertSampleExercises() {
+function checkAndInsertExercises() {
   const checkExercises = `SELECT COUNT(*) as count FROM exercises`;
   
   db.get(checkExercises, (err, row) => {
@@ -59,7 +64,13 @@ function insertSampleExercises() {
     }
 
     if (row.count === 0) {
-      const exercises = [
+      insertSampleExercises();
+    }
+  });
+}
+
+function insertSampleExercises() {
+  const exercises = [
         // Speaking exercises
         {
           type: 'speaking',
@@ -147,8 +158,6 @@ function insertSampleExercises() {
       
       stmt.finalize();
       console.log('Sample exercises inserted');
-    }
-  });
 }
 
 module.exports = { db, initializeDatabase };
